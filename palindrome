@@ -1,0 +1,9 @@
+string = str(input()).lower()
+result = []
+for char in string:
+    if "а" <= char <= "я" or "a" <= char <= "z":
+        result.append(char)
+if result == result[::-1]:
+    print("Полиндром")
+else:
+    print("Не полиндром")
