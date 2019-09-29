@@ -1,0 +1,19 @@
+# Чтобы программа не продолжала работать со строками
+number = int(input("Введите четное число:"))
+# Определяем число как строку, чтобы разделить на две части
+string = str(number)
+# Суммы обоеих частей
+sumLeft = 0
+sumRight = 0
+# Разделяем строку на левую и правую часть
+leftSide = string[:int(len(string) / 2)]
+rightSide = string[int(len(string) / 2):len(string)]
+# Считаем сумму обеих частей, переводя элемент в число
+for i in leftSide:
+    sumLeft += int(i)
+for a in rightSide:
+    sumRight += int(a)
+if sumLeft == sumRight:
+    print("Это \"счастливый билет\"")
+else:
+    print("Это не \"счастливый билет\"")
