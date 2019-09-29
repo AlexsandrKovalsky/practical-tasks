@@ -1,4 +1,4 @@
-string = str(input()).lower()
+string = str(input("Введите слово или предложение:")).lower()
 result = []
 for char in string:
     if "а" <= char <= "я" or "a" <= char <= "z":
