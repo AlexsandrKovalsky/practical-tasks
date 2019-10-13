@@ -9,18 +9,14 @@ def factorial(number1):
             result = 1
     return result
 
-
 def multiplication(number1, number2):
     return number1 * number2
-
 
 def sum(number1, number2):
     return number1 + number2
 
-
 def difference(number1, number2):
     return number1 - number2
-
 
 def division(number1, number2):
     if number2 != 0:
@@ -28,10 +24,8 @@ def division(number1, number2):
     else:
         return "Деление на 0 невозможно"
 
-
 def power(number1):
     return number1 * number1
-
 
 def calculate(number1, operation, number2=1):
     if operation == '!':
@@ -46,7 +40,6 @@ def calculate(number1, operation, number2=1):
         return multiplication()
     if operation == "/":
         return division(number1, number2)
-
 
 def calculator():
     number1 = float(input("Введите первое число:"))
