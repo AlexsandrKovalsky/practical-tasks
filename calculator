@@ -48,9 +48,12 @@ def calculate(number1, operation, number2=1):
         return division(number1, number2)
 
 
-number1 = float(input("Введите первое число:"))
-operation = input("Введите доступную операцию(!,^,+,-,*,/):")
-if operation == "!" or operation == "^":
-    print(calculate(number1, operation))
-number2 = float(input("Введите второе число:"))
-print(calculate(number1, operation, number2))
+def calculator():
+    number1 = float(input("Введите первое число:"))
+    operation = input("Введите доступную операцию(!,^,+,-,*,/):")
+    if operation == "!" or operation == "^":
+        return calculate(number1, operation)
+    number2 = float(input("Введите второе число:"))
+    return(calculate(number1, operation, number2))
+
+print(calculator())
