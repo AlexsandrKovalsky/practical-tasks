@@ -1,0 +1,14 @@
+flat_list = []
+
+
+def fill_flat_list(S):
+    for i in S:
+        if type(i) == list:
+            fill_flat_list(i)
+        else:
+            flat_list.append(i)
+
+
+lst = [1, [2, [[5]], 3], 4, [[[2,[5,[4]]], 7]]]
+fill_flat_list(lst)
+print(flat_list)
