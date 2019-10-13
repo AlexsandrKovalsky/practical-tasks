@@ -1,0 +1,15 @@
+def sort(data):
+    average = sum(data) / len(data)
+    left = []
+    right = []
+    for i in data:
+        if i > average:
+            right.append(i)
+        else:
+            left.append(i)
+    left.append(average)
+    return left + right
+
+
+data = [1, 9, 5, 6, 3]
+print(sort(data))
