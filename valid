@@ -1,0 +1,13 @@
+import re
+
+
+def email_valid():
+    address = input('Введите электронную почту:')
+    is_valid = re.match('(^[a-zA-Z0-9])*[a-zA-Z0-9][@][a-zA-Z]*[a-zA-Z][.][a-zA-Z]*[a-zA-Z]$', address)
+    if is_valid:
+        print('Корректно:', is_valid.group())
+    else:
+        print('Некроектно')
+
+
+email_valid()
