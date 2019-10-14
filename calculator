@@ -34,17 +34,17 @@ def power(number1, number2):
 
 
 def calculator():
-    number1 = int(input("Введите первое число:"))
-    operation = input("Введите доступную операцию(!,^,+,-,*,/):")
-    unary_operations = {"!": factorial}
-    if operation in unary_operations:
-        return unary_operations[operation](number1)
-    number2 = int(input("Введите второе число:"))
     binary_operations = {'^': power,
                          '+': sum,
                          '-': difference,
                          '*': multiplication,
                          '/': division}
+    unary_operations = {"!": factorial}
+    number1 = int(input("Введите первое число:"))
+    operation = input("Введите доступную операцию(!,^,+,-,*,/):")
+    if operation in unary_operations:
+        return unary_operations[operation](number1)
+    number2 = int(input("Введите второе число:"))
     if operation in binary_operations:
         return binary_operations[operation](number1, number2)
 
