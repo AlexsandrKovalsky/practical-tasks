@@ -1,0 +1,9 @@
+import random
+import struct
+
+def CreateBinary(count, start, end):
+    file = open('test.dat', 'wb')
+    for i in range(count):
+        number = random.randint(start, end)
+        file.write(struct.pack('>i', number))
+    file.close()
