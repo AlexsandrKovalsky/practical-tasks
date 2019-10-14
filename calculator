@@ -1,5 +1,5 @@
 def factorial(number1):
-    result = "Некоректные данные"
+    result = 1
     if number1 > 0:
         while number1 > 0:
             result *= number1
@@ -9,14 +9,18 @@ def factorial(number1):
             result = 1
     return result
 
+
 def multiplication(number1, number2):
     return number1 * number2
+
 
 def sum(number1, number2):
     return number1 + number2
 
+
 def difference(number1, number2):
     return number1 - number2
+
 
 def division(number1, number2):
     if number2 != 0:
@@ -24,30 +28,25 @@ def division(number1, number2):
     else:
         return "Деление на 0 невозможно"
 
-def power(number1):
-    return number1 * number1
 
-def calculate(number1, operation, number2=1):
-    if operation == '!':
-        return factorial(number1)
-    if operation == '^':
-        return power(number1)
-    if operation == "+":
-        return sum(number1, number2)
-    if operation == "-":
-        return difference(number1, number2)
-    if operation == "*":
-        return multiplication()
-    if operation == "/":
-        return division(number1, number2)
+def power(number1, number2):
+    return number1 ** number2
+
 
 def calculator():
-    number1 = float(input("Введите первое число:"))
+    number1 = int(input("Введите первое число:"))
     operation = input("Введите доступную операцию(!,^,+,-,*,/):")
-    if operation == "!" or operation == "^":
-        return calculate(number1, operation)
-    number2 = float(input("Введите второе число:"))
-    return calculate(number1, operation, number2)
+    unary_operations = {"!": factorial}
+    if operation in unary_operations:
+        return unary_operations[operation](number1)
+    number2 = int(input("Введите второе число:"))
+    binary_operations = {'^': power,
+                         '+': sum,
+                         '-': difference,
+                         '*': multiplication,
+                         '/': division}
+    if operation in binary_operations:
+        return binary_operations[operation](number1, number2)
 
 
 print(calculator())
